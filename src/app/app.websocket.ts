@@ -39,7 +39,7 @@ export class AppWebSocket {
   }
 
   disconnect() {
-    delete this.service[this.url];
+    delete this.service.webSockets[this.url];
     this.subscription.unsubscribe();
     this.messages.complete();
     this.messages.unsubscribe();
@@ -67,7 +67,9 @@ export class WebSocketService implements OnDestroy {
    */
   disconnect(url: string): void {
     const appWebSocket: AppWebSocket = this.webSockets[url];
-    appWebSocket.disconnect();
+    if (appWebSocket) {
+      appWebSocket.disconnect();
+    }
   }
 
   /**
