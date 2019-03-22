@@ -7,5 +7,4 @@ import { AbstractRocketComponent } from '../rocket/rocket.abstract-component';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent extends AbstractRocketComponent {
-}
+export class DashboardComponent extends AbstractRocketComponent {}

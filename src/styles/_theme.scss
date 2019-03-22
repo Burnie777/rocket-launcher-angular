@@ -14,10 +14,24 @@ $app-accent:  mat-palette($mat-deep-orange);
 
 // The warn palette is optional (defaults to red).
 $app-warn:    mat-palette($mat-red);
-$app-success:    mat-palette($mat-green);
+$app-success: mat-palette($mat-green);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+
+$app-color: #48FFFD;
+$app-shadow-opacity: .15;
+$app-shadow:
+  0 0 1px rgba(255, 255, 255, $app-shadow-opacity),
+  0 0 2px rgba(255, 255, 255, $app-shadow-opacity),
+  0 0 3px rgba(255, 255, 255, $app-shadow-opacity),
+  0 0 4px rgba($app-color, $app-shadow-opacity),
+  0 0 7px rgba($app-color, $app-shadow-opacity),
+  0 0 8px rgba($app-color, $app-shadow-opacity), 
+  0 0 10px rgba($app-color, $app-shadow-opacity),
+  0 0 15px rgba($app-color, $app-shadow-opacity);
+
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component

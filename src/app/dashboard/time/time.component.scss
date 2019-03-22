@@ -1,0 +1,26 @@
+@import 'theme';
+
+
+.time-container {
+  font-size: 40px;
+  position: absolute;
+  font-size: 75px;
+  bottom: 41px;
+  left: 16px;
+  width: 485px;
+  color: rgba($app-color, .6);
+  text-shadow: $app-shadow;
+
+  &.disabled {
+    opacity: .3;
+  }
+
+  .label {
+    color: rgba($app-color, .6);
+    text-shadow: $app-shadow;
+    font-size: 11px;
+    padding-left: 5px;
+    margin-top: 4px;
+  }
+}
+

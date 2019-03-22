@@ -1,0 +1,19 @@
+<div class="engine-container">
+  <div class="item-container">
+    <div class="label">Thrust</div>
+    <div class="chart">
+      <div class="slide" [style.width]="rocket.thrustPercentage * 100 + '%'" *ngIf="rocket"></div>
+    </div>
+    <div class="value" *ngIf="rocket">{{rocket.thrust | number : '1.0-0'}} N</div>
+    <div class="value" *ngIf="!rocket">0 N</div>
+  </div>
+
+  <div class="item-container">
+    <div class="label">Fuel</div>
+    <div class="chart">
+      <div class="slide" [style.width]="rocket.fuelPercentage * 100 + '%'" *ngIf="rocket"></div>
+    </div>
+    <div class="value" *ngIf="rocket">{{rocket.fuelMass | number : '1.0-0'}} kg</div>
+    <div class="value" *ngIf="!rocket">0 kg</div>
+  </div>
+</div>

@@ -1,0 +1,150 @@
+@import 'theme';
+
+
+.gyro-container {
+  position: absolute;
+  width: 350px;
+  top: 32px;
+  left: 32px;
+
+  .rocket-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 350px;
+    border: 2px solid rgba($app-color, .6);
+    box-shadow: $app-shadow;
+    background: black;
+    overflow: hidden;
+
+    .rocket-inner-container {
+      position: absolute;
+      width: 296px;
+      height: 296px;
+      border: 2px solid rgba($app-color, .6);
+      border-radius: 296px;
+      box-shadow: $app-shadow;
+      background: black;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+
+      .rocket {
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 296px;
+        height: 296px;
+
+        .triangle {
+          position: absolute;
+          top: 35px;
+          left: 98px;
+          width: 0; 
+          height: 0;
+          transform-origin: 50% 120px;
+          border-left: 50px solid transparent;
+          border-right: 50px solid transparent;
+          border-bottom: 200px solid rgba($app-color, .8);  
+        }
+
+        .value {
+          position: absolute;
+          color: white;
+          text-shadow: $app-shadow;
+          bottom: 78px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          font-size: 24px;
+        }
+
+        .unit {
+          position: absolute;
+          color: white;
+          text-shadow: $app-shadow;
+          bottom: 68px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          font-size: 8px;          
+        }
+
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          width: 6px;
+          height: 20px;
+          border-radius: 3px;
+          box-shadow: $app-shadow;
+          background: rgba($app-color, .8);
+          left: 50%;
+          transform: translate(-50%, 0);
+          z-index: 2;
+        }
+        &:before {
+          top: -23px;
+        }
+        &:after {
+          bottom: -22px;
+        }
+      }
+    }
+
+    .line {
+      position: absolute;
+      width: 1px;
+      height: 356px;
+      background: radial-gradient(rgba($app-color, 0), rgba($app-color, .2));
+      top: -5px;
+      left: 172px;
+      transform-origin: 50% 50%;
+    }
+
+    .degrees {
+      position: absolute;
+      font-size: 9px;
+      color: rgba($app-color, .4);
+      &.deg-0, &.deg-180 {
+        left: 50%;
+        transform: translate(-50%, 0); 
+      }
+      &.deg-0 {
+        top: 6px;
+      }
+      &.deg-180 {
+        bottom: 6px;
+      }
+      &.deg-90, &.deg-90n {
+        top: 50%;
+        transform: translate(0, -50%); 
+      }
+      &.deg-90 {
+        right: 3px;
+      }
+      &.deg-90n {
+        left: 0;
+      }
+    }
+
+    .status {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 250px;
+      transform: translate(-50%, -50%);
+      padding: 12px 32px;
+      border-radius: 6px;
+      font-size: 1.2em;
+      text-transform: capitalize;
+      background: mat-color($app-warn, 500);
+      color: white;
+      text-align: center;
+      &.ready, &.launched {
+        display: none;
+      }
+      &.deployed {
+        background: #080;
+      }
+    }
+  }
+}

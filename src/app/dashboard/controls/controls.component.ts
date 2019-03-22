@@ -35,7 +35,7 @@ export class DashboardControlsComponent extends AbstractRocketComponent {
           this.rocket.deploySatellite();
           break;
         case 27:  // Esc
-          this.rocket.selfDestroy();
+          this.rocket.abort();
           break;
       }
     } else if (keyCode === 32 || keyCode === 13) {

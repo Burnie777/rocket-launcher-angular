@@ -1,0 +1,19 @@
+<div class="gyro-container">
+  <div class="rocket-container">
+    <div class="line" [style.transform]="'rotate('+ (i * (180/totalLines)) +'deg)'" 
+      *ngFor="let i of lines"></div>
+    <div class="degrees deg-0">0</div>
+    <div class="degrees deg-180">180</div>
+    <div class="degrees deg-90">90</div>
+    <div class="degrees deg-90n">-90</div>
+    
+    <div class="rocket-inner-container">
+      <div class="rocket" [style.transform]="'rotate('+ (rocket ? rocket.angle : 0) +'deg)'">
+        <div class="triangle"></div>
+        <span class="value">{{(rocket ? rocket.angle : 0) | number : '1.0-0'}}</span>
+        <span class="unit">degrees</span>
+      </div>
+      <div class="status" [ngClass]="rocket.status" *ngIf="rocket">{{rocket.status}}</div>
+    </div>
+  </div>
+</div>

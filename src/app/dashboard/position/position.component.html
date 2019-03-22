@@ -1,0 +1,56 @@
+<div class="position-container">
+  <div class="header">
+    <div class="label">Target</div>
+    <table>
+      <thead>
+        <tr>
+          <th width="85">&nbsp;</th>
+          <th width="111">Min</th>
+          <th width="111">Max</th>
+          <th>Current</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="left">Altitude</th>
+          <td>20,000 m</td>
+          <td>25,000 m</td>
+          <td *ngIf="!rocket">0 m</td>
+          <td class="value" [class.red]="rocket.altitude < 20000 || rocket.altitude > 25000"
+            *ngIf="rocket" >{{rocket.altitude | number : '1.0-0'}} m</td>
+        </tr>
+        <tr>
+          <th class="left">Position</th>
+          <td>15,000 m</td>
+          <td>30,000 m</td>
+          <td *ngIf="!rocket">0 m</td>
+          <td class="value" [class.red]="rocket.position < 15000 || rocket.altitude > 30000"
+            *ngIf="rocket">{{rocket.position | number : '1.0-0'}} m</td>
+        </tr>
+        <tr>
+          <th class="left">Angle</th>
+          <td>85 deg</td>
+          <td>95 deg</td>
+          <td *ngIf="!rocket">0 deg</td>
+          <td class="value" [class.red]="rocket.angle < 85 || rocket.altitude > 95"
+            *ngIf="rocket">{{rocket.angle | number : '1.0-0'}} deg</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="chart-container">
+    <svg [attr.viewBox]="viewBox">
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="30%" stop-color="#cc0000" />
+          <stop offset="100%" stop-color="#ffff00" />
+        </linearGradient>
+      </defs>
+      <rect class="target-zone" x="20000" y="5000" width="15000" height="5000" />
+      <polyline class="path" [attr.points]="points" *ngIf="points" />
+      <circle class="position" [attr.cx]="position.x" [attr.cy]="position.y" r="300" *ngIf="position" />
+    </svg>
+    <div class="target-zone-label">Target Zone</div>
+  </div>
+</div>

@@ -1,5 +1,40 @@
+@import 'theme';
+
+
 .controls-container {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 32px;
+  right: 16px;
+  width: 268px;
+
+  .nav-container {
+    .button {
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+
+    &.disabled {
+      opacity: .5;
+      pointer-events: none;
+    }
+  }
+
+  .operational-container {
+    margin-top: 15px;
+    overflow: auto;
+
+    .button {
+      width: 100%;
+    }
+    
+    .two-buttons {
+      .button {
+        width: 49%;
+        &:not(:last-child) {
+          margin-right: 2%;
+        }
+      }
+    }
+  }
 }

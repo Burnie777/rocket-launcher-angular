@@ -61,8 +61,8 @@ export class RocketService implements OnDestroy {
     return this.http.post<any>(`/rockets/${rocket.uuid}/rotate-right/`, {});
   }
 
-  selfDestroyRocket(rocket: Rocket): Observable<string> {
-    return this.http.post<any>(`/rockets/${rocket.uuid}/self-destroy/`, {});
+  abort(rocket: Rocket): Observable<string> {
+    return this.http.post<any>(`/rockets/${rocket.uuid}/abort/`, {});
   }
 
   /** Disconnect from websocket */
