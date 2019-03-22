@@ -91,6 +91,7 @@ export class Rocket {
   /** Websocket: update rocket attributes from websocket */
   update(message: any): void {
     const data = message.data;
+    console.log(data);
 
     if (data.flight_time >= this.flightTime) {
       // Ignore message in case it came late
