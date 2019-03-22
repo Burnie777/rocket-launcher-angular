@@ -1,6 +1,4 @@
 <div class="controls-container">
-  <div class="header">Controls</div>
-
   <div class="nav-container" [class.disabled]="!rocket || rocket.status !== RocketStatus.LAUNCHED">
     <div class="button round left" (click)="rocket.rotateLeft()">&lsaquo;</div>
     <div class="button round top" (click)="rocket.increaseThrust()">&#43;</div>

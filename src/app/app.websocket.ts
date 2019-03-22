@@ -17,6 +17,8 @@ export class AppWebSocket {
   }
 
   connect() {
+    // Since we don't care about the type of error at this time,
+    // the subscription might be open and we don't want memory leaks
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
