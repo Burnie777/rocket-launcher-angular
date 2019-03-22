@@ -24,7 +24,7 @@
           <td>15,000 m</td>
           <td>30,000 m</td>
           <td *ngIf="!rocket">0 m</td>
-          <td class="value" [class.red]="rocket.position < 15000 || rocket.altitude > 30000"
+          <td class="value" [class.red]="rocket.position < 15000 || rocket.position > 30000"
             *ngIf="rocket">{{rocket.position | number : '1.0-0'}} m</td>
         </tr>
         <tr>
@@ -32,7 +32,7 @@
           <td>85 deg</td>
           <td>95 deg</td>
           <td *ngIf="!rocket">0 deg</td>
-          <td class="value" [class.red]="rocket.angle < 85 || rocket.altitude > 95"
+          <td class="value" [class.red]="rocket.angle < 85 || rocket.angle > 95"
             *ngIf="rocket">{{rocket.angle | number : '1.0-0'}} deg</td>
         </tr>
       </tbody>
