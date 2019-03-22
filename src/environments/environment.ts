@@ -5,10 +5,8 @@
 export const environment = {
   production: false,
   api: {
-//    url: 'https://rocket-launcher.valispace.com/api',
-//    websocket: 'wss://rocket-launcher.valispace.com/ws',
-    url: 'http://rocket-launcher.valispace.com/api',
-    websocket: 'ws://rocket-launcher.valispace.com/ws',
+    url: 'https://rocket-launcher.valispace.com/api',
+    websocket: 'wss://rocket-launcher.valispace.com/ws',
     tokenKey: 'RocketLauncherAPIToken'
   }
 };
